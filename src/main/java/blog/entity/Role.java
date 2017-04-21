@@ -1,4 +1,4 @@
-package softuniBlog.entity;
+package blog.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;

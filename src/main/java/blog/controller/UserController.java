@@ -1,4 +1,4 @@
-package softuniBlog.controller;
+package blog.controller;
 
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import softuniBlog.bindingModel.UserBindingModel;
-import softuniBlog.entity.Role;
-import softuniBlog.entity.User;
-import softuniBlog.repository.RoleRepository;
-import softuniBlog.repository.UserRepository;
+import blog.bindingModel.UserBindingModel;
+import blog.entity.Role;
+import blog.entity.User;
+import blog.repository.RoleRepository;
+import blog.repository.UserRepository;
 
 import javax.servlet.http.HttpServletResponse;
 

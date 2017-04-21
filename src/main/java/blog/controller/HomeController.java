@@ -1,11 +1,11 @@
-package softuniBlog.controller;
+package blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import softuniBlog.entity.Article;
-import softuniBlog.repository.ArticleRepository;
+import blog.entity.Article;
+import blog.repository.ArticleRepository;
 
 import java.util.List;
 

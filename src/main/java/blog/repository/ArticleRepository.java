@@ -1,7 +1,7 @@
-package softuniBlog.repository;
+package blog.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import softuniBlog.entity.Article;
+import blog.entity.Article;
 
 public interface ArticleRepository extends JpaRepository<Article, Integer> {
 }

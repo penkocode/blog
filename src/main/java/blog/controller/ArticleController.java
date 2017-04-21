@@ -1,4 +1,4 @@
-package softuniBlog.controller;
+package blog.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -10,11 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import softuniBlog.bindingModel.ArticleBindingModel;
-import softuniBlog.entity.Article;
-import softuniBlog.entity.User;
-import softuniBlog.repository.ArticleRepository;
-import softuniBlog.repository.UserRepository;
+import blog.bindingModel.ArticleBindingModel;
+import blog.entity.Article;
+import blog.entity.User;
+import blog.repository.ArticleRepository;
+import blog.repository.UserRepository;
 
 import java.io.File;
 import java.io.IOException;
