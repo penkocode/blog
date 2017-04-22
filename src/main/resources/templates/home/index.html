@@ -8,12 +8,13 @@
                             <h2 th:text="${article.title}"></h2>
                         </header>
 
+                        <img th:if="${article.imagePath} !=null"
+                             th:src="${article.imagePath}" alt="Article image" width="120px" height="120"/>
+
                         <p th:utext="${article.summary}"></p>
 
-                            <img th:if="${article.imagePath} !=null"
-                                 th:src="${article.imagePath}" alt="Article image" width="120px" height="120"/>
 
-
+                        <p></p>
                         <small class="author" th:text="${article.author.fullName}"></small>
 
                         <footer>
