@@ -9,16 +9,17 @@
                         <label class="col-sm-4 control-label" for="article_title">Article Title</label>
                         <div class="col-sm-4 ">
                             <input type="text" class="form-control" id="article_title" placeholder="Article Title"
-                                   name="title"/>
+                                   name="title" maxlength="50"/>
                         </div>
                     </div>
-
+                    <!--Textarea editor BEGIN-->
                     <div class="form-group">
-                        <label class="col-sm-4 control-label" for="article_content">Content</label>
+                        <label class="col-sm-4 control-label" for="content">Content</label>
                         <div class="col-sm-6">
-                            <textarea class="form-control" rows="6" id="article_content" name="content"></textarea>
+                            <textarea cols="80" id="content" name="content" rows="10" ></textarea>
                         </div>
                     </div>
+                    <!--Textarea editor END-->
                     <!--Image Upload Begin-->
                     <div class="form-group">
                         <label class="col-sm-4 control-label" for="article_content">Image</label>
@@ -38,3 +39,9 @@
         </div>
     </div>
 </main>
+<script>
+    CKEDITOR.replace( 'content', {
+        height: 260,
+        width: 320,
+    } );
+</script>
