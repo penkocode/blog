@@ -10,11 +10,16 @@
                     <p th:text="${article.content}"></p>
 
                     <!-- Article Image Shown BEGIN-->
+                    <div class="popup" onclick="myFunction()">
 
-                    <img th:if="${article.imagePath} !=null" th:src="${article.imagePath}" alt="Article image"
-                         width="250px"/>
+                        <img th:if="${article.imagePath} !=null"
+                             th:src="${article.imagePath}" alt="Article image" width="250px"/>
 
-                    <!-- Article Image Shown End-->
+                        <span class="popupImage" id="myPopup">
+                            <img th:if="${article.imagePath} !=null"
+                                 th:src="${article.imagePath}" alt="Article image" width="600px"/></span>
+                    </div>
+                    <!-- Article Image Shown END-->
 
                     <small class="author" th:text="${article.author.fullName}"></small>
 
