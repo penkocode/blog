@@ -3,9 +3,12 @@
         <div class="row">
             <div id="main" class="col-sm-9">
                 <div>
-                    <span th:text="${user.email}"></span>
+                    Email: <span th:text="${user.email}"></span>
                     <br/>
-                    <span th:text="${user.fullName}"></span>
+                    Full Name: <span th:text="${user.fullName}"></span>
+                    <br/>
+                    User ID: <span th:text="${user.id}"></span>
+                    <br/>
                 </div>
             </div>
         </div>
