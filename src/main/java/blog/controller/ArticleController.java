@@ -1,5 +1,10 @@
 package blog.controller;
 
+import blog.bindingModel.ArticleBindingModel;
+import blog.entity.Article;
+import blog.entity.User;
+import blog.repository.ArticleRepository;
+import blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -10,11 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import blog.bindingModel.ArticleBindingModel;
-import blog.entity.Article;
-import blog.entity.User;
-import blog.repository.ArticleRepository;
-import blog.repository.UserRepository;
 
 import java.io.File;
 import java.io.IOException;
@@ -92,7 +92,7 @@ public class ArticleController {
                 articleBindingModel.getTitle(),
                 articleBindingModel.getContent(),
                 userEntity,
-                databaseImagePath /*<----без това работи*/
+                databaseImagePath
         );
 
         this.articleRepository.saveAndFlush(articleEntity);
