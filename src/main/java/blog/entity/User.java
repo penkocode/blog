@@ -33,6 +33,7 @@ public class User {
     public User() {
         this.roles = new HashSet<>();
         this.articles = new HashSet<>();
+
     }
 
     @Id
@@ -103,8 +104,8 @@ public class User {
     }
 
     @Transient
-    public boolean isAuthor(Article article){
-        return Objects.equals(this.getId(),article.getAuthor().getId());
+    public boolean isAuthor(Article article) {
+        return Objects.equals(this.getId(), article.getAuthor().getId());
 
     }
 }
