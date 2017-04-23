@@ -9,21 +9,21 @@
                         <label class="col-sm-4 control-label" for="article_title">Article Title</label>
                         <div class="col-sm-4 ">
                             <input type="text" class="form-control" id="article_title" placeholder="Article Title"
-                                   name="title" maxlength="50"/>
+                                   name="title" maxlength="60"/>
                         </div>
                     </div>
                     <!--Textarea editor BEGIN-->
                     <div class="form-group">
                         <label class="col-sm-4 control-label" for="content">Content</label>
                         <div class="col-sm-6">
-                            <textarea cols="80" id="content" name="content" rows="10" ></textarea>
+                            <textarea id="content" name="content"></textarea>
                         </div>
                     </div>
                     <!--Textarea editor END-->
                     <!--Image Upload Begin-->
                     <div class="form-group">
                         <label class="col-sm-4 control-label" for="article_content">Image</label>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <input type="file" class="form-control" id="image" name="image"/>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
     </div>
 </main>
 <script>
-    CKEDITOR.replace( 'content', {
+    CKEDITOR.replace('content', {
         height: 260,
-        width: 320,
-    } );
+        width: 340,
+    });
 </script>
