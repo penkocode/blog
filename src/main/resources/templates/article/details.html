@@ -7,19 +7,21 @@
                         <h2 th:text="${article.title}"></h2>
                     </header>
 
-                    <p th:utext="${article.content}"></p>
-
                     <!-- Article Image Shown BEGIN-->
-                    <div class="popup" onclick="myFunction()">
+                    <div align="left">
+                        <div class="popup" onclick="myFunction()">
 
-                        <img th:if="${article.imagePath} !=null"
-                             th:src="${article.imagePath}" alt="Article image" width="250px"/>
-
-                        <span class="popupImage" id="myPopup">
                             <img th:if="${article.imagePath} !=null"
-                                 th:src="${article.imagePath}" alt="Article image" width="600px"/></span>
+                                 th:src="${article.imagePath}" alt="Article image" width="250px"/>
+
+                            <span class="popupImage" id="myPopup">
+                            <img th:if="${article.imagePath} !=null"
+                                 th:src="${article.imagePath}" alt="Article image" width="400px"/></span>
+                        </div>
                     </div>
                     <!-- Article Image Shown END-->
+
+                    <p th:utext="${article.content}"></p>
                     <p></p>
 
                     <small class="author" th:text="${article.author.fullName}"></small>
