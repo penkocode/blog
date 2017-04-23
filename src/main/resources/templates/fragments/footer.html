@@ -2,6 +2,7 @@
     <div class="container modal-footer">
         <p>&copy; 2017 - Software University Foundation</p>
         <p>&copy; 2017 - Redesigned and Edited By Penko Georgiev</p>
-        <p id="date"></p>
+        <p th:text="${#calendars.format(#calendars.createNow(), 'dd MMM yyyy')}"></p>
+
     </div>
 </footer>
