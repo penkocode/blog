@@ -1,5 +1,7 @@
 package blog.controller;
 
+import blog.entity.Article;
+import blog.repository.ArticleRepository;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -20,7 +22,9 @@ import blog.entity.User;
 import blog.repository.RoleRepository;
 import blog.repository.UserRepository;
 
+import javax.jws.WebParam;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -30,6 +34,9 @@ public class UserController {
     @Autowired
     UserRepository userRepository;
 
+    @Autowired
+    ArticleRepository articleRepository;
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("view", "user/register");
@@ -38,9 +45,9 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public String registerProcess(UserBindingModel userBindingModel){
+    public String registerProcess(UserBindingModel userBindingModel) {
 
-        if(!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())){
+        if (!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())) {
             return "redirect:/register";
         }
 
@@ -62,14 +69,14 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(Model model){
+    public String login(Model model) {
         model.addAttribute("view", "user/login");
 
         return "base-layout";
     }
 
-    @RequestMapping(value="/logout", method = RequestMethod.GET)
-    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logoutPage(HttpServletRequest request, HttpServletResponse response) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
         if (auth != null) {
@@ -81,15 +88,18 @@ public class UserController {
 
     @GetMapping("/profile")
     @PreAuthorize("isAuthenticated()")
-    public String profilePage(Model model){
+    public String profilePage(Model model) {
         UserDetails principal = (UserDetails) SecurityContextHolder.getContext()
                 .getAuthentication()
                 .getPrincipal();
 
         User user = this.userRepository.findByEmail(principal.getUsername());
-
+        /*User Articles in profile view BEGIN*/
+        List<Article> articles = this.articleRepository.findAll();
+        /*User Articles in profile view END*/
         model.addAttribute("user", user);
         model.addAttribute("view", "user/profile");
+        model.addAttribute("articles",articles);
 
         return "base-layout";
     }
