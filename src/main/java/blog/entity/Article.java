@@ -1,6 +1,9 @@
 package blog.entity;
 
+import org.springframework.security.access.prepost.PreAuthorize;
+
 import javax.persistence.*;
+import java.security.acl.Owner;
 import java.util.Date;
 
 @Entity
@@ -101,9 +104,12 @@ public class Article {
     public String getSummary() {
         return this.getContent()
                 .substring(0, 150) + "...";
-
-
     }
+    /*Profile User Article Summary BEGIN*/
+    @Transient
+    public String getSummaryArt(){
 
-
+        return this.getContent().substring(0, 250) + "...";
+    }
+    /*Profile User Article Summary BEGIN*/
 }
