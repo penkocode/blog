@@ -15,7 +15,7 @@
         </div>
     </div>
     <!--Article summary in Profile BEGIN-->
-    <div class="container body-content">
+    <div class="container body-content" sec:authorize="hasRole('ROLE_ADMIN')">
         <div class="row">
             <th:block th:each="article : ${articles}">
                 <div class="col-md-6">
@@ -35,8 +35,14 @@
 
                         <footer>
                             <div class="pull-right">
-                                <a class="btn btn-default btn-xs"
-                                   th:href="@{/article/{id}(id=${article.id})}">Read more &raquo;</a>
+                                <div class="pull-right">
+                                    <a class="btn btn-success btn-xs"
+                                       th:href="@{/article/edit/{id}(id = ${article.id})}">Edit</a>
+                                    <a class="btn btn-danger btn-xs"
+                                       th:href="@{/article/delete/{id}(id = ${article.id})}">Delete</a>
+                                    <a class="btn btn-default btn-xs"
+                                       th:href="@{/article/{id}(id=${article.id})}">Read more &raquo;</a>
+                                </div>
                             </div>
                         </footer>
                     </article>
@@ -44,5 +50,5 @@
             </th:block>
         </div>
     </div>
-    <!--Article summary in Profile BEGIN-->
+    <!--Article summary in Profile END-->
 </main>
