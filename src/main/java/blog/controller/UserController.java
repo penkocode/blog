@@ -1,7 +1,12 @@
 package blog.controller;
 
+import blog.bindingModel.UserBindingModel;
 import blog.entity.Article;
+import blog.entity.Role;
+import blog.entity.User;
 import blog.repository.ArticleRepository;
+import blog.repository.RoleRepository;
+import blog.repository.UserRepository;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,13 +21,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import blog.bindingModel.UserBindingModel;
-import blog.entity.Role;
-import blog.entity.User;
-import blog.repository.RoleRepository;
-import blog.repository.UserRepository;
 
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
@@ -104,4 +103,3 @@ public class UserController {
         return "base-layout";
     }
 }
-
