@@ -226,4 +226,5 @@ public class ArticleController {
 
         return user.isAdmin() || user.isAuthor(article);
     }
+
 }
