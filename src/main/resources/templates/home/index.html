@@ -15,7 +15,9 @@
 
 
                         <p></p>
-                        <small class="author" th:text="${article.author.fullName}"></small>
+                        <small>Author: </small><small class="author" th:text="${article.author.fullName}"></small>
+                        <br/>
+                        <small>Date Create: </small><small class="date" th:text="${article.date} "></small>
 
                         <footer>
                             <div class="pull-right">
